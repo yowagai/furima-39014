@@ -25,23 +25,24 @@
 | user               | references | null: false, foreign_key: true |
 | name               | string     | null: false                    |
 | price              | integer    | null: false                    |
+| explanation        | string     | null: false                    |
 | category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
 | delivery_charge_id | integer    | null: false                    |
-| region_origin_id   | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
 | estimated_id       | integer    | null: false                    |
 
 ### Association
 
 - belongs_to :user
-- has_many :orders
+- has_one :order
 
 ## addresses テーブル
 
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | order         | references | null: false, foreign_key: true |
-| post_code     | integer    | null: false                    |
+| post_code     | string     | null: false                    |
 | prefecture_id | integer    | null: false                    |
 | city          | string     | null: false                    |
 | address       | string     | null: false                    |
@@ -62,6 +63,6 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :items
-- has_one    :addresses
+- belongs_to :item
+- has_one    :address
 
