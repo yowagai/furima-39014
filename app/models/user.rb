@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   validates :birthday, presence: true
 
-  with_options presence: true, format: { with: /\A[ぁ-ゔァ-ヴ\p{Ideographic}ａ-ｚＡ-Ｚ０-９]+\z/} do
+  with_options presence: true, format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/} do
     validates :family_name
     validates :first_name
     validates :family_name_kana
