@@ -12,12 +12,12 @@ class User < ApplicationRecord
     validates :first_name
   end
 
-  with_options presence: true, format: { with: /[ァ-ヶ一]/} do
+  with_options presence: true, format: { with: /\A[ァ-ヶ一]+\z/} do
     validates :family_name_kana
     validates :first_name_kana
   end
 
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates :password, format: { with: VALID_PASSWORD_REGEX,}
+  validates :password, format: { with: VALID_PASSWORD_REGEX}
 end
