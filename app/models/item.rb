@@ -14,7 +14,6 @@ class Item < ApplicationRecord
     validates :price, numericality: { onyl_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
-
   validates :name, presence: true
   validates :explanation, presence: true
   validates :category_id, presence: true, numericality: { other_than: 1 }
@@ -26,7 +25,6 @@ class Item < ApplicationRecord
   validates :image, presence: true, unless: :was_attached?
 
   def was_attached?
-    self.image.attached?
+    image.attached?
   end
-
 end
