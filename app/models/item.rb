@@ -9,7 +9,7 @@ class Item < ApplicationRecord
   validates :category_id, presence: true, numericality: { other_than: 1 }
   validates :condition_id, presence: true, numericality: { other_than: 1 }
   validates :delivery_charge_id, presence: true, numericality: { other_than: 1 }
-  validates :prefecture_id, presence: true, numericality: { other_than: 1 }
+  validates :prefecture_id, presence: true, numericality: { other_than: 0 }
   validates :estimated_id, presence: true, numericality: { other_than: 1 }
 
   validates :image, presence: true, unless: :was_attached?
