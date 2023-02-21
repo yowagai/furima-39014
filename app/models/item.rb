@@ -2,7 +2,7 @@ class Item < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :condition
-  belongs_to :delivery_charge
+  belongs_to :charge
   belongs_to :prefecture
   belongs_to :estimated
 
@@ -15,7 +15,7 @@ class Item < ApplicationRecord
   validates :explanation, presence: true
   validates :category_id, presence: true, numericality: { other_than: 1 }
   validates :condition_id, presence: true, numericality: { other_than: 1 }
-  validates :delivery_charge_id, presence: true, numericality: { other_than: 1 }
+  validates :charge_id, presence: true, numericality: { other_than: 1 }
   validates :prefecture_id, presence: true, numericality: { other_than: 0 }
   validates :estimated_id, presence: true, numericality: { other_than: 1 }
 
