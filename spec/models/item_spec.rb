@@ -28,29 +28,29 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Explanation can't be blank")
       end
       it 'category_idが空では登録できない' do
-        @item.category_id = ''
+        @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("Category must be other than 1")
       end
       it 'condition_idが空では登録できない' do
-        @item.condition_id = ''
+        @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Condition can't be blank")
+        expect(@item.errors.full_messages).to include("Condition must be other than 1")
       end
       it 'charge_idが空では登録できない' do
-        @item.charge_id = ''
+        @item.charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Charge can't be blank")
+        expect(@item.errors.full_messages).to include("Charge must be other than 1")
       end
       it 'prifectur_idが空では登録できない' do
-        @item.prefecture_id = ''
+        @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prefecture can't be blank")
+        expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
       end
       it 'estimated_idが空では登録できない' do
-        @item.estimated_id = ''
+        @item.estimated_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Estimated can't be blank")
+        expect(@item.errors.full_messages).to include("Estimated must be other than 1")
       end
       it 'imageが空では登録できない' do
         @item.image = nil
