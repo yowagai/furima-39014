@@ -51,7 +51,7 @@ class ItemsController < ApplicationController
   end
 
   def root_item
-    return if @item.user != current_user
+    return if @item.user == current_user
     redirect_to root_path
   end
 end
