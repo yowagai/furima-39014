@@ -6,7 +6,11 @@ class OrderAddress
   validates :prefecture_id, numericality: { other_than: 0 }
   validates :city, presence: true
   validates :address, presence: true
-  validates :phone_number, presence: true, length: { minimum: 10, maximum: 11 }
+
+  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
+    validates :phone_number, length: { minimum: 10, maximum: 11 }
+  end
+  # validates :phone_number, presence: true, length: { minimum: 10, maximum: 11 }
   
   validates :user_id, presence: true
   validates :item_id, presence: true

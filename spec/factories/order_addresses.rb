@@ -8,9 +8,5 @@ FactoryBot.define do
     phone_number  { Faker::Number.between(from: 10000000000, to: 99999999999) }
 
     token         { "tok_abcdefghijk00000000000000000" }
-
-    user_id       { Faker::Number.number(digits: 10)}
-    item_id       { Faker::Number.number(digits: 10)}
-
   end
 end
