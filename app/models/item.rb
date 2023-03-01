@@ -16,11 +16,11 @@ class Item < ApplicationRecord
 
   validates :name, presence: true
   validates :explanation, presence: true
-  validates :category_id, presence: true, numericality: { other_than: 1 }
-  validates :condition_id, presence: true, numericality: { other_than: 1 }
-  validates :charge_id, presence: true, numericality: { other_than: 1 }
-  validates :prefecture_id, presence: true, numericality: { other_than: 0 }
-  validates :estimated_id, presence: true, numericality: { other_than: 1 }
+  validates :category_id, presence: true, numericality: { other_than: 1, message: 'を選択して下さい' }
+  validates :condition_id, presence: true, numericality: { other_than: 1, message: 'を選択して下さい' }
+  validates :charge_id, presence: true, numericality: { other_than: 1,  message: 'を選択して下さい' }
+  validates :prefecture_id, presence: true, numericality: { other_than: 0,  message: 'を選択して下さい' }
+  validates :estimated_id, presence: true, numericality: { other_than: 1,  message: 'を選択して下さい' }
 
   validates :image, presence: true, unless: :was_attached?
 
