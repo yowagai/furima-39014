@@ -30,27 +30,27 @@ RSpec.describe Item, type: :model do
       it 'category_idが空では登録できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Category must be other than 1')
+        expect(@item.errors.full_messages).to include('Category を選択して下さい')
       end
       it 'condition_idが空では登録できない' do
         @item.condition_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Condition must be other than 1')
+        expect(@item.errors.full_messages).to include('Condition を選択して下さい')
       end
       it 'charge_idが空では登録できない' do
         @item.charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Charge must be other than 1')
+        expect(@item.errors.full_messages).to include('Charge を選択して下さい')
       end
       it 'prifectur_idが空では登録できない' do
         @item.prefecture_id = 0
         @item.valid?
-        expect(@item.errors.full_messages).to include('Prefecture must be other than 0')
+        expect(@item.errors.full_messages).to include('Prefecture を選択して下さい')
       end
       it 'estimated_idが空では登録できない' do
         @item.estimated_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include('Estimated must be other than 1')
+        expect(@item.errors.full_messages).to include('Estimated を選択して下さい')
       end
       it 'imageが空では登録できない' do
         @item.image = nil
