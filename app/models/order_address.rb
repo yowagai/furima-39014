@@ -3,7 +3,7 @@ class OrderAddress
   attr_accessor :post_code, :prefecture_id, :city, :address, :apartment, :phone_number, :item_id, :user_id, :token
 
   validates :post_code, presence: true, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ }
-  validates :prefecture_id, numericality: { other_than: 0 }
+  validates :prefecture_id, numericality: { other_than: 0, message: 'を選択して下さい' }
   validates :city, presence: true
   validates :address, presence: true
 
