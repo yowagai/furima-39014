@@ -31,3 +31,6 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+# エラーが出て、masterからmainに変更したいので記述。メンターの助言通りに・・・①deploy.rbに以下の記述を追加
+set :branch, 'main'
