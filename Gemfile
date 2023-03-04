@@ -79,3 +79,6 @@ gem 'payjp'
 gem 'rails-i18n'
 gem "aws-sdk-s3", require: false
 gem 'mail', '2.7.1'
+gem 'aws-partitions', '~> 1.721'
+gem 'msgpack', '~> 1.6', '>= 1.6.1'
+gem 'rake', '~> 13.0', '>= 13.0.6'
